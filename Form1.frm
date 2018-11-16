@@ -1,21 +1,37 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   3060
+   ClientHeight    =   1260
    ClientLeft      =   120
    ClientTop       =   420
    ClientWidth     =   4560
    LinkTopic       =   "Form1"
-   ScaleHeight     =   3060
+   ScaleHeight     =   1260
    ScaleWidth      =   4560
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox txtHello 
+      Height          =   555
+      Left            =   1650
+      TabIndex        =   2
+      Top             =   60
+      Width           =   2205
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Create PDF"
       Height          =   495
-      Left            =   1680
+      Left            =   1440
       TabIndex        =   0
-      Top             =   1320
+      Top             =   690
       Width           =   1215
+   End
+   Begin VB.Label lblHello 
+      Alignment       =   1  'Right Justify
+      Caption         =   "Hellow World:"
+      Height          =   255
+      Left            =   120
+      TabIndex        =   1
+      Top             =   210
+      Width           =   1485
    End
 End
 Attribute VB_Name = "Form1"
@@ -31,7 +47,7 @@ Private Sub Command1_Click()
     
     ' Set the PDF title and filename
     objPDF.PDFTitle = "Test PDF Document"
-    objPDF.PDFFileName = "c:\test.pdf"
+    objPDF.PDFFileName = "c:\test123.pdf"
 
     ' We must tell the class where the PDF fonts are located
     objPDF.PDFLoadAfm = App.Path & "\Fonts"
@@ -48,12 +64,14 @@ Private Sub Command1_Click()
         objPDF.PDFSetTextColor = vbBlue
 
         ' Set the text we want to print
-        objPDF.PDFTextOut "Hello, World! From mjwPDF (www.vb6.us)"
+        objPDF.PDFTextOut "Hello, World! From testing (www.vb6.us)"
 
     ' End our PDF document (this will save it to the filename)
     objPDF.PDFEndDoc
     
     objPDF.PDFFileName = "c:\test.pdf"
     
+    txtHello.Text = "Hello World"
+    lblHello.Caption = "Happy Live"
     
 End Sub
