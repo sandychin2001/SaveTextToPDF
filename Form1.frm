@@ -47,10 +47,10 @@ Private Sub Command1_Click()
     
     ' Set the PDF title and filename
     objPDF.PDFTitle = "Test PDF Document"
-    objPDF.PDFFileName = "c:\test123.pdf"
+    objPDF.PDFFileName = "c:\Temp\testABC.pdf"
 
     ' We must tell the class where the PDF fonts are located
-    objPDF.PDFLoadAfm = App.Path & "\Fonts"
+    objPDF.PDFLoadAfm = App.Path & "\Temp\Fonts"
 
     ' View the PDF file after we create it
     objPDF.PDFView = True
@@ -64,18 +64,18 @@ Private Sub Command1_Click()
         objPDF.PDFSetTextColor = vbBlue
 
         ' Set the text we want to print
-        objPDF.PDFTextOut "Hello, World! From testing (www.vb6.us)"
+        objPDF.PDFTextOut "Hello, World! From www.vb6.us"
 
     ' End our PDF document (this will save it to the filename)
     objPDF.PDFEndDoc
     
-    objPDF.PDFFileName = "c:\test.pdf"
+    objPDF.PDFFileName = "c:\Temp\test.pdf"
     
     txtHello.Text = "Hello World"
-    lblHello.Caption = "Happy Live"
+    lblHello.Caption = "Happy Live!!!"
     
     MsgBox "Final project and merge to master folder.", vbInformation + vbOKOnly, Me.Caption
     
     txtHello.Text = "Finish Work."
-    lblHello.Caption = "Are you sure?"
+    lblHello.Caption = "Are you sure???"
 End Sub
