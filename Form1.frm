@@ -74,4 +74,8 @@ Private Sub Command1_Click()
     txtHello.Text = "Hello World"
     lblHello.Caption = "Happy Live"
     
+    MsgBox "Final project and merge to master folder.", vbInformation + vbOKOnly, Me.Caption
+    
+    txtHello.Text = "Finish Work."
+    lblHello.Caption = "Are you sure?"
 End Sub
